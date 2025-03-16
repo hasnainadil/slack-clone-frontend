@@ -13,7 +13,6 @@ const Channels = () => {
     try {
       await api.post('/channels', newChannel);
       setReloadChannel(true);
-      // Refresh the channels list or handle the new channel as needed
     } catch (error) {
       console.error('Error creating channel:', error);
     }
