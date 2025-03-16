@@ -73,7 +73,7 @@ function Login() {
           {error && <div className="text-red-500 text-sm mb-4">{error}</div>}
           <button
             type="submit"
-            className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed transition-all"
+            className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed "
             disabled={isLoadingLogin}
           >
             {isLoadingLogin ? 'Logging in...' : 'Login'}

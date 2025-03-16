@@ -4,15 +4,16 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import './App.css';
-import Settings from './components/Settings';
-import Channels from './components/Channels';
-import Dms from './components/Dms';
+import Channels from './components/Channels/Channels';
+import Dms from './components/Dms/Dms';
+import Notification from './components/Notification/Notification';
+
 
 // Protected route component to handle authentication
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth();
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !isLoading) {
     return <Navigate to="/login" />;
   }
 
@@ -37,7 +38,7 @@ function App() {
               >
                 <Route path="channels" element={<Channels />} />
                 <Route path="dms" element={<Dms />} />
-                <Route path="settings" element={<Settings />} />
+                <Route path="activity" element={<Notification />} />
               </Route>
               <Route path="/" element={<Navigate to="/dashboard" />} />
             </Routes>

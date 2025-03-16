@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(true);
       return true;
     } catch (err) {
+      console.log(err);
       setError(err.response?.data?.message || 'Login failed');
       return false;
     }
